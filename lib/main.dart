@@ -132,39 +132,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-class SomePainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    var paint = Paint()
-      ..color = Colors.green
-      ..strokeWidth = 3
-      ..style = PaintingStyle.stroke;
-    final width = size.width;
-    final height = size.height;
-
-    canvas.drawLine(Offset(0, 0), Offset(width, height), paint);
-    canvas.drawLine(Offset(0, 0), Offset(width, 0), paint);
-    canvas.drawLine(Offset(0, 0), Offset(0, height), paint);
-    canvas.drawLine(Offset(width, 0), Offset(0, height), paint);
-    canvas.drawLine(Offset(0, height), Offset(width, height), paint);
-    canvas.drawLine(Offset(width, 0), Offset(width, height), paint);
-    canvas.drawLine(
-        Offset(0, height / 3), Offset(width / 2, height / 2), paint);
-    canvas.drawLine(Offset(width / 3, 0), Offset(width / 2, height / 2), paint);
-
-    canvas.drawLine(Offset(width / 2, 0), Offset(width / 2, height), paint);
-    canvas.drawLine(Offset(0, height / 2), Offset(width, height / 2), paint);
-    canvas.drawLine(Offset(0, height / 2), Offset(width / 2, height), paint);
-    canvas.drawLine(
-        Offset(width, height / 2), Offset(width / 2, height), paint);
-    canvas.drawLine(Offset(width, height / 2), Offset(width / 2, 0), paint);
-    canvas.drawLine(Offset(0, height / 2), Offset(width / 2, 0), paint);
-    canvas.drawCircle(Offset(width / 2, height / 2), 100, paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
-  }
-}
